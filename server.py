@@ -20,8 +20,9 @@ def message_received(client, server, message):
 	print("Client(%d) said: %s" % (client['id'], message))
 
 
+HOST="127.0.0.1"
 PORT=9001
-server = WebsocketServer(PORT)
+server = WebsocketServer(HOST, PORT)
 server.set_fn_new_client(new_client)
 server.set_fn_client_left(client_left)
 server.set_fn_message_received(message_received)
